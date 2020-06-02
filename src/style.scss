@@ -1,0 +1,238 @@
+%zvecan-background {
+    background: url("../img/zvecan.jpg") no-repeat fixed center 60%;
+    background-size: cover;
+}
+
+// Colors:
+$primary-color: #1793D1;
+$secondary-color: #1D1D1B;
+$tertiary-color: #EEE;
+
+// Fonts:
+$primary-font: 'Open Sans', sans-serif;
+$secondary-font: 'Nunito', sans-serif;
+
+// Responsive breakpoints:
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+@mixin responsive($size) {
+    @media (min-width: $size) {
+        @content;
+    }
+}
+
+
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+::-webkit-scrollbar-track {
+    background-color: $tertiary-color;
+}
+::-webkit-scrollbar-thumb {
+    background-color: rgba($color: $secondary-color, $alpha: .8);
+
+    &:hover {
+        background-color: $secondary-color;
+    }
+}
+
+body {
+    background-color: $tertiary-color;
+    color: $secondary-color;
+    font-family: $primary-font;
+}
+h2 {
+    font-family: $secondary-font;
+}
+hr {
+    border-bottom: 2px solid $primary-color;
+    width: 25%;
+}
+#about,
+#skills_and_tools,
+#coding_activity,
+#contact {
+    padding-top: 7rem;
+}
+
+// NAVIGATION
+.navbar-light {
+    background-color: $tertiary-color;
+    border-top: 3px solid $tertiary-color; // Just to center vertically
+    display: none;
+    letter-spacing: 1.3px;
+    text-transform: uppercase;
+
+    .navbar-toggler {
+        border-color: rgba($color: $primary-color, $alpha: .5);
+
+        &:focus {
+            outline-color: rgba($color: $primary-color, $alpha: .8);
+        }
+    }
+    .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'><path stroke='rgb(23, 147, 209)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>");
+    }
+    .navbar-nav {
+
+        .nav-link {
+            color: $primary-color;
+
+            &:hover {
+                color: $primary-color;
+
+                @include responsive($lg) {
+                    border-bottom: 1px solid $primary-color;
+                }
+            }
+            &:focus {
+                color: $primary-color;
+            }
+        }
+    }
+}
+
+// PROGRESS BAR
+.progress-container {
+    background-color: $tertiary-color;
+    display: none;
+    height: 3px;
+    width: 100%;
+
+    #progress_bar {
+        background-color: $primary-color;
+        height: 3px;
+        width: 0%;
+    }
+}
+
+// TOP
+#top {
+    @extend %zvecan-background;
+    height: 100vh;
+
+    .overlay {
+        background-color: rgba($color: $secondary-color, $alpha: .75);
+        height: 100%;
+    }
+    .container {
+        color: $tertiary-color;
+        font-family: $secondary-font;
+        z-index: 2;
+
+        h1 {
+            font-size: 2.75rem;
+
+            @include responsive($sm) {
+                font-size: 3.5rem;
+            }
+            @include responsive($lg) {
+                font-size: 4.25rem;
+            }
+        }
+        p {
+            font-size: 1.4rem;
+
+            // Custom
+            @include responsive(473px) {
+                font-size: 1.25rem;
+            }
+            // Custom
+            @include responsive(512px) {
+                font-size: 1.4rem;
+            }
+            @include responsive($md) {
+                font-size: 1.6rem;
+            }
+            @include responsive($lg) {
+                font-size: 1.8rem;
+            }
+
+            .badge-info {
+                font-size: .45em;
+                transform: rotate(-10deg);
+                right: .9em;
+                bottom: 1.6em;
+            }
+        }
+    }
+}
+
+// PARTICLES.JS
+#particles_js {
+    height: 100vh;
+    width: 100%;
+    z-index: 1;
+    top: 0;
+}
+
+// ABOUT
+#about {
+
+    img {
+        width: 200px;
+    }
+}
+
+// SKILLS AND TOOLS
+#skills_and_tools {
+
+    ul {
+        list-style-type: none;
+
+        li {
+            font-size: 1.25rem;
+            line-height: 2.5;
+        }
+    }
+    .d-lg-flex {
+        
+        p {
+            font-size: .7rem;
+        }
+    }
+}
+
+// CODING ACTIVITY
+#coding_activity {
+    background-color: $primary-color;
+    padding-bottom: 6rem;
+}
+
+// CONTACT & FOOTER
+#contact,
+footer {
+    background-color: $secondary-color;
+    color: $tertiary-color;
+}
+#contact {
+
+    blockquote {
+        font-size: 1.05rem;
+        opacity: .8;
+    }
+    input:focus,
+    textarea:focus {
+        box-shadow: 0 0 0 0.2rem rgba($color: $primary-color, $alpha: .5);
+    }
+    a {
+        color: $tertiary-color;
+
+        @include responsive($lg) {
+
+            &:hover {
+                opacity: .8;
+            }
+        }
+    }
+    i {
+        font-size: 32px;
+    }
+}
+footer {
+    font-size: .8rem;
+    letter-spacing: 1px;
+}
