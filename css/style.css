@@ -1,8 +1,21 @@
 #top {
   background: url("../img/zvecan.jpg") no-repeat fixed center 60%;
   background-size: cover;
+  height: 100vh;
 }
 
+@font-face {
+  font-family: "Open Sans Regular";
+  src: url("../assets/fonts/OpenSans-Regular.ttf");
+}
+@font-face {
+  font-family: "Nunito";
+  src: url("../assets/fonts/Nunito-Bold.ttf");
+}
+@font-face {
+  font-family: "Open Sans Italic";
+  src: url("../assets/fonts/OpenSans-Italic.ttf");
+}
 ::-webkit-scrollbar {
   width: 5px;
 }
@@ -21,7 +34,12 @@
 body {
   background-color: #EEE;
   color: #1D1D1B;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans Regular", sans-serif;
+}
+
+.badge-info,
+.btn-info {
+  background-color: #1793D1;
 }
 
 h2 {
@@ -83,9 +101,6 @@ hr {
   width: 0%;
 }
 
-#top {
-  height: 100vh;
-}
 #top .overlay {
   background-color: rgba(29, 29, 27, 0.75);
   height: 100%;
@@ -152,7 +167,7 @@ hr {
 #skills_and_tools ul {
   list-style-type: none;
 }
-#skills_and_tools ul li {
+#skills_and_tools li {
   font-size: 1.25rem;
   line-height: 2.5;
 }
@@ -175,6 +190,9 @@ footer {
   font-size: 1.05rem;
   opacity: 0.8;
 }
+#contact blockquote p {
+  font-family: "Open Sans Italic", sans-serif;
+}
 #contact input:focus,
 #contact textarea:focus {
   box-shadow: 0 0 0 0.2rem rgba(23, 147, 209, 0.5);
@@ -184,7 +202,7 @@ footer {
 }
 @media (min-width: 992px) {
   #contact a:hover {
-    opacity: 0.8;
+    opacity: 0.6;
   }
 }
 #contact i {
