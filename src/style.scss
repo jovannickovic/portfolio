@@ -1,6 +1,7 @@
 %zvecan-background {
     background: url("../img/zvecan.jpg") no-repeat fixed center 60%;
     background-size: cover;
+    height: 100vh;
 }
 
 // Colors:
@@ -9,8 +10,21 @@ $secondary-color: #1D1D1B;
 $tertiary-color: #EEE;
 
 // Fonts:
-$primary-font: 'Open Sans', sans-serif;
+@font-face {
+    font-family: 'Open Sans Regular';
+    src: url('../assets/fonts/OpenSans-Regular.ttf');
+}
+@font-face {
+    font-family: 'Nunito';
+    src: url('../assets/fonts/Nunito-Bold.ttf');
+}
+@font-face {
+    font-family: 'Open Sans Italic';
+    src: url('../assets/fonts/OpenSans-Italic.ttf');
+}
+$primary-font: 'Open Sans Regular', sans-serif;
 $secondary-font: 'Nunito', sans-serif;
+$tertiary-font: 'Open Sans Italic', sans-serif;
 
 // Responsive breakpoints:
 $sm: 576px;
@@ -43,6 +57,10 @@ body {
     background-color: $tertiary-color;
     color: $secondary-color;
     font-family: $primary-font;
+}
+.badge-info,
+.btn-info {
+    background-color: $primary-color;
 }
 h2 {
     font-family: $secondary-font;
@@ -112,7 +130,6 @@ hr {
 // TOP
 #top {
     @extend %zvecan-background;
-    height: 100vh;
 
     .overlay {
         background-color: rgba($color: $secondary-color, $alpha: .75);
@@ -182,11 +199,10 @@ hr {
 
     ul {
         list-style-type: none;
-
-        li {
-            font-size: 1.25rem;
-            line-height: 2.5;
-        }
+    }
+    li {
+        font-size: 1.25rem;
+        line-height: 2.5;
     }
     .d-lg-flex {
         
@@ -213,6 +229,10 @@ footer {
     blockquote {
         font-size: 1.05rem;
         opacity: .8;
+
+        p {
+            font-family: $tertiary-font;
+        }
     }
     input:focus,
     textarea:focus {
@@ -224,7 +244,7 @@ footer {
         @include responsive($lg) {
 
             &:hover {
-                opacity: .8;
+                opacity: .6;
             }
         }
     }
