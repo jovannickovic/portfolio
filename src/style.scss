@@ -11,20 +11,15 @@ $tertiary-color: #EEE;
 
 // Fonts:
 @font-face {
-    font-family: 'Open Sans Regular';
+    font-family: 'Open Sans';
     src: url('../assets/fonts/OpenSans-Regular.ttf');
 }
 @font-face {
     font-family: 'Nunito';
     src: url('../assets/fonts/Nunito-Bold.ttf');
 }
-@font-face {
-    font-family: 'Open Sans Italic';
-    src: url('../assets/fonts/OpenSans-Italic.ttf');
-}
-$primary-font: 'Open Sans Regular', sans-serif;
+$primary-font: 'Open Sans', sans-serif;
 $secondary-font: 'Nunito', sans-serif;
-$tertiary-font: 'Open Sans Italic', sans-serif;
 
 // Responsive breakpoints:
 $sm: 576px;
@@ -58,9 +53,22 @@ body {
     color: $secondary-color;
     font-family: $primary-font;
 }
-.badge-info,
+a.badge-info,
 .btn-info {
     background-color: $primary-color;
+
+    &:focus {
+        background-color: $primary-color;
+        opacity: .85;
+    }
+
+    @include responsive($lg) {
+        
+        &:hover {
+            background-color: $primary-color;
+            opacity: .85;
+        }
+    }
 }
 h2 {
     font-family: $secondary-font;
@@ -132,7 +140,7 @@ hr {
     @extend %zvecan-background;
 
     .overlay {
-        background-color: rgba($color: $secondary-color, $alpha: .75);
+        background-color: rgba($color: $secondary-color, $alpha: .8);
         height: 100%;
     }
     .container {
@@ -146,30 +154,28 @@ hr {
             @include responsive($sm) {
                 font-size: 3.5rem;
             }
-            @include responsive($lg) {
+            @include responsive($md) {
                 font-size: 4.25rem;
+            }
+            @include responsive($lg) {
+                font-size: 5rem;
             }
         }
         p {
-            font-size: 1.4rem;
+            font-size: 1.2rem;
 
-            // Custom
-            @include responsive(473px) {
-                font-size: 1.25rem;
-            }
-            // Custom
-            @include responsive(512px) {
-                font-size: 1.4rem;
+            @include responsive($sm) {
+                font-size: 1.53rem;
             }
             @include responsive($md) {
-                font-size: 1.6rem;
+                font-size: 1.85rem;
             }
             @include responsive($lg) {
-                font-size: 1.8rem;
+                font-size: 2.18rem;
             }
 
             .badge-info {
-                font-size: .45em;
+                font-size: .5em;
                 transform: rotate(-10deg);
                 right: .9em;
                 bottom: 1.6em;
@@ -201,21 +207,19 @@ hr {
         list-style-type: none;
     }
     li {
-        font-size: 1.25rem;
-        line-height: 2.5;
-    }
-    .d-lg-flex {
-        
-        p {
-            font-size: .7rem;
-        }
+        font-size: 1.2rem;
+        line-height: 3;
     }
 }
 
 // CODING ACTIVITY
 #coding_activity {
     background-color: $primary-color;
-    padding-bottom: 6rem;
+    color: $tertiary-color;
+
+    hr {
+        border-color: $tertiary-color;
+    }
 }
 
 // CONTACT & FOOTER
@@ -226,13 +230,8 @@ footer {
 }
 #contact {
 
-    blockquote {
-        font-size: 1.05rem;
-        opacity: .8;
-
-        p {
-            font-family: $tertiary-font;
-        }
+    p {
+        font-size: 1.17rem;
     }
     input:focus,
     textarea:focus {
