@@ -5,16 +5,12 @@
 }
 
 @font-face {
-  font-family: "Open Sans Regular";
+  font-family: "Open Sans";
   src: url("../assets/fonts/OpenSans-Regular.ttf");
 }
 @font-face {
   font-family: "Nunito";
   src: url("../assets/fonts/Nunito-Bold.ttf");
-}
-@font-face {
-  font-family: "Open Sans Italic";
-  src: url("../assets/fonts/OpenSans-Italic.ttf");
 }
 ::-webkit-scrollbar {
   width: 5px;
@@ -34,12 +30,24 @@
 body {
   background-color: #EEE;
   color: #1D1D1B;
-  font-family: "Open Sans Regular", sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
-.badge-info,
+a.badge-info,
 .btn-info {
   background-color: #1793D1;
+}
+a.badge-info:focus,
+.btn-info:focus {
+  background-color: #1793D1;
+  opacity: 0.85;
+}
+@media (min-width: 992px) {
+  a.badge-info:hover,
+.btn-info:hover {
+    background-color: #1793D1;
+    opacity: 0.85;
+  }
 }
 
 h2 {
@@ -102,7 +110,7 @@ hr {
 }
 
 #top .overlay {
-  background-color: rgba(29, 29, 27, 0.75);
+  background-color: rgba(29, 29, 27, 0.8);
   height: 100%;
 }
 #top .container {
@@ -118,36 +126,36 @@ hr {
     font-size: 3.5rem;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 768px) {
   #top .container h1 {
     font-size: 4.25rem;
   }
 }
-#top .container p {
-  font-size: 1.4rem;
-}
-@media (min-width: 473px) {
-  #top .container p {
-    font-size: 1.25rem;
+@media (min-width: 992px) {
+  #top .container h1 {
+    font-size: 5rem;
   }
 }
-@media (min-width: 512px) {
+#top .container p {
+  font-size: 1.2rem;
+}
+@media (min-width: 576px) {
   #top .container p {
-    font-size: 1.4rem;
+    font-size: 1.53rem;
   }
 }
 @media (min-width: 768px) {
   #top .container p {
-    font-size: 1.6rem;
+    font-size: 1.85rem;
   }
 }
 @media (min-width: 992px) {
   #top .container p {
-    font-size: 1.8rem;
+    font-size: 2.18rem;
   }
 }
 #top .container p .badge-info {
-  font-size: 0.45em;
+  font-size: 0.5em;
   transform: rotate(-10deg);
   right: 0.9em;
   bottom: 1.6em;
@@ -168,16 +176,16 @@ hr {
   list-style-type: none;
 }
 #skills_and_tools li {
-  font-size: 1.25rem;
-  line-height: 2.5;
-}
-#skills_and_tools .d-lg-flex p {
-  font-size: 0.7rem;
+  font-size: 1.2rem;
+  line-height: 3;
 }
 
 #coding_activity {
   background-color: #1793D1;
-  padding-bottom: 6rem;
+  color: #EEE;
+}
+#coding_activity hr {
+  border-color: #EEE;
 }
 
 #contact,
@@ -186,12 +194,8 @@ footer {
   color: #EEE;
 }
 
-#contact blockquote {
-  font-size: 1.05rem;
-  opacity: 0.8;
-}
-#contact blockquote p {
-  font-family: "Open Sans Italic", sans-serif;
+#contact p {
+  font-size: 1.17rem;
 }
 #contact input:focus,
 #contact textarea:focus {
